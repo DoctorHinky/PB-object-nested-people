@@ -263,28 +263,6 @@ Abel Ashley speaks fluently:
 
 ...
 */
-/* 
-for(let user of users){
-  const fluently = user.languages.every(language => {
-    console.log(`Checking ${language.name} for ${user.name}: Level ${language.level}`);
-    return language.level >= 4;
-  });
-  console.log(fluently);
-  
-
-  if(fluently){
-    console.log(`${user.name} speaks: `);
-
-
-  for(let language of user.languages){
-    console.log(`- ${language.name}`);
-   }
-  }
-}
- */
-console.log('task 2.5');
-
-
 
 for(let user of users){
   console.log(user.name);
@@ -297,5 +275,3 @@ for(let user of users){
   }
   console.log('');
 }
-
-
