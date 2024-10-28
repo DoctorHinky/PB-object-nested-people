@@ -46,6 +46,8 @@ Expected output:
 */
 
 console.log("\nBilling address:");
+console.log(person.address.billing.zip);
+
 
 /*
 Task 1.2
@@ -56,6 +58,8 @@ Expected output:
 comics
 */
 console.log("\nLast hobby:");
+console.log(person.hobbies[person.hobbies.length -1]);
+
 
 /*
 Task 1.3
@@ -67,6 +71,7 @@ English: 4
 */
 
 console.log("\nSecond language:");
+console.log(person.languages[1].name + ': ' + person.languages[1].level);
 
 /*
 Task 1.4
@@ -79,7 +84,14 @@ Zip: 83-315
 Country: Germany
 */
 
+function converteKey(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 console.log("\nDelivery address:");
+for(let key of Object.keys(person.address.delivery)){
+  console.log(`${converteKey(key)}: ${person.address.delivery[key]}`);
+}
 
 /*
 Task 1.5
@@ -94,6 +106,10 @@ Hobbies:
 */
 
 console.log("\nHobbies:");
+for(let hobby of person.hobbies){
+  console.log('- ' + hobby);
+  
+}
 
 /*
 Task 1.6
@@ -108,3 +124,9 @@ Spanish: 2
 */
 
 console.log("\nKnown languages:");
+
+for(let language of person.languages){
+  if(language.level < 5){
+    console.log(language.name + ' ' + language.level);
+  }
+}
